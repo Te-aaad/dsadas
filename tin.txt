@@ -1,0 +1,45 @@
+import os
+
+class Shop:
+    def __init__(self, items_bought, money):
+        self.item_for_sale = ["Mango", "Banana", "apple"]
+        self.price_for_item = [20.00, 60.00, 50.00]
+        self.directory = dict(zip(self.item_for_sale, self.price_for_item))
+        self.items_bought = items_bought
+        self.money = money
+        self.change = 0
+        self.price = 0
+
+    def item_check(self):
+        for items in self.items_bought:
+            if items in self.item_for_sale:
+                self.price += self.directory[items]
+
+    def money_check(self):
+        self.item_check()
+        if self.money >= self.price:
+            self.change = self.money - self.price
+        else:
+            print("Insufficient money!")
+
+    def receipt(self):
+        self.money_check()
+        path = os.getcwd()
+        filename = "/receipt.txt"
+        with open(path + filename, "w") as r:
+            r.write("\n receipt\n")
+            r.write(f"money: {self.money}\n")
+            r.write(f"items_bought: {self.items_bought} \n")
+            r.write(f"price: {self.price}\n")
+            r.write(f"change: {self.change}\n")
+            for item in self.items_bought:
+                r.write(f"{item}: {self.directory[item]}\n")
+            r.write(f"total price : {self.price}\n")
+            r.write(f"change: {self.change}")
+
+items = ["Mango", "Banana"]
+money = 120.00
+shop = Shop(items, money)
+shop.receipt()
+
+
