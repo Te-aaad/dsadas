@@ -1,0 +1,5 @@
+import ds as s 
+items = ["Banana", "apple"]
+money = 700.00
+vendor = s.Shop(items, money)
+vendor.receipt()
