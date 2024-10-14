@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+class SimplePayrollProgram {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        
+
+       
+        System.out.print("Enter Gross Pay: ");
+        double grossPay = input.nextDouble();
+        
+        System.out.println("---------------------");
+
+        System.out.print("SSS: ");
+        double sss = input.nextDouble();
+        System.out.print("Tax: ");
+        double tax = input.nextDouble();
+        System.out.print("Pag-IBIG: ");
+        double pagibig = input.nextDouble();
+
+       
+        double totalDeductions = sss + tax + pagibig;
+        System.out.println("Total Deductions: " + totalDeductions);
+        System.out.println("---------------------");
+
+        double netPay = grossPay - totalDeductions;
+        System.out.println("Net Pay: " + netPay);
+
+        input.close(); 
+    }
+}
