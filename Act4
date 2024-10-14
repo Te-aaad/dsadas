@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class PageantGeneralAverage {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+    
+
+       
+        System.out.print("Enter Stage Presence score (0-100): ");
+        double sp = input.nextDouble();
+        
+        System.out.print("Enter Audience Impact score (0-100): ");
+        double ai = input.nextDouble();
+        
+        System.out.print("Enter Q&A score (0-100): ");
+        double qa = input.nextDouble();
+        
+        System.out.print("Enter Talent score (0-100): ");
+        double tl = input.nextDouble();
+
+       
+        double spPercent = sp * 0.25;
+        double aiPercent = ai * 0.25;
+        double qaPercent = qa * 0.30;
+        double tlPercent = tl * 0.20;
+
+   
+        double GA = spPercent + aiPercent + qaPercent + tlPercent;
+
+     
+        System.out.println("---------------------");
+        System.out.printf("General Average (GA): %.2f%%\n", GA);
+
+        input.close();
+    }
+}
