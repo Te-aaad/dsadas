@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class SimpleGradingSystem {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("SIMPLE GRADING SYSTEM");
+
+        
+        System.out.println("Quizzes: (40%)");
+        System.out.print("Q1: ");
+        double q1 = input.nextDouble();
+        System.out.print("Q2: ");
+        double q2 = input.nextDouble();
+        System.out.print("Q3: ");
+        double q3 = input.nextDouble();
+        
+       
+        double QT = (q1 + q2 + q3) / 3;
+        double Qpercent = QT * 0.40;
+
+        
+        System.out.println("QT: " + QT);
+        System.out.println("Q%: " + Qpercent);
+        System.out.println("-----------------------------");
+
+      
+        System.out.println("Machine Problems: (60%)");
+        System.out.print("MP1: ");
+        double mp1 = input.nextDouble();
+        System.out.print("MP2: ");
+        double mp2 = input.nextDouble();
+        System.out.print("MP3: ");
+        double mp3 = input.nextDouble();
+
+        
+        double MPT = (mp1 + mp2 + mp3) / 3;
+        double MPpercent = MPT * 0.60;
+
+        
+        System.out.println("MPT: " + MPT);
+        System.out.println("MP%: " + MPpercent);
+        
+        
+        double TG = Qpercent + MPpercent;
+        System.out.println("-----------------------------");
+        System.out.println("Total Grade (TG): " + TG);
+
+        input.close(); 
+    }
+}
