@@ -1,0 +1,36 @@
+def generate_receipt(order_items, total_cost):
+    receipt_content = "----- RECEIPT -----\n"
+    receipt_content += "Items Ordered:\n"
+    
+    for item, price in order_items.items():
+        receipt_content += f"{item}: ${price:.2f}\n"
+    
+    receipt_content += "---------------------\n"
+    receipt_content += f"Total Cost: ${total_cost:.2f}\n"
+    receipt_content += "Thank you for your order!\n"
+    
+    return receipt_content
+
+def run_receipt_generator():
+    print("Welcome to the Order Receipt Generator!")
+
+   
+    order_items = {}
+    while True:
+        item_name = input("Enter the item name (or 'done' to finish): ")
+        if item_name.lower() == 'done':
+            break
+        item_price = float(input(f"Enter the price for {item_name}: "))
+        order_items[item_name] = item_price
+
+    total_cost = sum(order_items.values())
+
+    receipt = generate_receipt(order_items, total_cost)
+
+    with open("receipt.txt", "w") as file:
+        file.write(receipt)
+
+    print("Receipt has been saved to 'receipt.txt'.")
+
+
+run_receipt_generator()
