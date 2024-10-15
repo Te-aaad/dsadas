@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        int score;
+        int numofitem;
+        int eg;
+        int x = 50;
+        int y = 50;
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter score: ");
+        score = input.nextInt();
+
+        System.out.print("Enter num of items: ");
+        numofitem = input.nextInt();
+
+        eg = score / numofitem * x + y;
+        System.out.println("Sum: " + eg);
+       
+    }
+}
